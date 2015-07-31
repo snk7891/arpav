@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Arpav forecasts </title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  </head>
+
+  <body>
+
+    <div class="container-fluid" style="margin-top: 1em">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Padova - 31 luglio pomeriggio</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row-fluid">
+            
+            <div class="col-xs-4">
+              <img src="http://www.arpa.veneto.it/previsioni/images/meteosymbols/a2.png" />
+            </div>
+            <div class="col-xs-8">
+              <strong>Cielo: </strong>Sereno o poco nuvoloso<br/>
+              <strong>Temperatura: </strong>max 26/28 C<br/>
+              <strong>Precipitazioni: </strong>assenti<br/>
+              <strong>Probabilit&agrave; precipitazione: </strong>0%<br/>
+              <strong>Attendibilit&agrave;: </strong>buona<br/>
+            </div>
+            
+          </div>
+          <div class="clearfix"></div>
+          <div class="row-fluid" style="margin: 1em; padding-top: 1em; border-top: 1px solid #ccc">
+            Sulla regione transitano intense correnti occidentali che limitano l'effetto dell'anticiclone presente sul Mediterraneo. Per il resto della settimana il tempo sar&agrave; in prevalenza variabile, con instabilit&agrave; residua gioved&igrave;, e ulteriore nuvolosit&agrave; e qualche precipitazione tra sabato e domenica. Le temperature, dopo un temporaneo calo giovedi, si riporteranno su valori prossimi alle medie del periodo.
+          </div>
+        </div>
+      </div>
+      
+      <button class="btn btn-lg" id="update">Aggiorna</button>
+
+    </div>
+
+    <script>
+      $(function() {
+        $('#update').on("click", function() {
+          $.get("/update", function() {
+            location.reload();
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

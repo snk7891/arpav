@@ -1,0 +1,17 @@
+{
+  "name": "arpav",
+  "version": "1.0.0",
+  "description": "Meteo Arpav",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "robertobaldin@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "download": "^4.1.4",
+    "express": "^4.13.1",
+    "moment": "^2.10.6",
+    "xml2js": "^0.4.9"
+  }
+}

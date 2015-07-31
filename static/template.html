@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Arpav forecasts </title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  </head>
+
+  <body>
+
+    <div class="container-fluid" style="margin-top: 1em">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Padova - %data</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row-fluid">
+            
+            <div class="col-xs-4">
+              <img src="%simbolo" />
+            </div>
+            <div class="col-xs-8">
+              <strong>Cielo: </strong>%cielo<br/>
+              <strong>Temperatura: </strong>%temperatura<br/>
+              <strong>Precipitazioni: </strong>%precipitazioni<br/>
+              <strong>Probabilit&agrave; precipitazione: </strong>%probabilita<br/>
+              <strong>Attendibilit&agrave;: </strong>%attendibilita<br/>
+            </div>
+            
+          </div>
+          <div class="clearfix"></div>
+          <div class="row-fluid" style="margin: 1em; padding-top: 1em; border-top: 1px solid #ccc">
+            %previsione
+          </div>
+        </div>
+      </div>
+      
+      <button class="btn btn-lg" id="update">Aggiorna</button>
+
+    </div>
+
+    <script>
+      $(function() {
+        $('#update').on("click", function() {
+          $.get("/update", function() {
+            location.reload();
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
